@@ -1,14 +1,17 @@
-import react from 'react'
+import React, {useState} from 'react'
 import './App.css'
 
-const App = () => {
 
+const App = () => {
+  // let messagem = "Hello world!!!"
+  const [messagem, setMessagem] = useState("Hello world!!!")
 
   return (
   <div>
   
     <div className="container">
-      <h1>Hello world!!!</h1>
+      {messagem} <br/> 
+    <button onClick={() => setMessagem("HELLOO")}>Mudar mensagem</button>
     </div>
 
   </div>
