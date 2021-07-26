@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-// import {v4 as uuidv4 } from "uuid";
+import React, {useEffect, useState} from 'react';
+import {v4 as uuidv4 } from "uuid";
+import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from "./components/Header"
@@ -25,6 +26,16 @@ const App = () => {
     },  
   ]);
 
+  useEffect (() => {
+    const fetchTasks = async () => {
+      const { data } = await axios.get('https://jsonplaceholder.cypress.io/todos?_limit=10')
+    
+      setTasks( data );
+    };
+
+    fetchTasks();
+  }, []);
+
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
       if (task.id === taskId) return {...task, completed: !task.completed };
@@ -39,7 +50,7 @@ const App = () => {
     const newTasks = [ ...tasks, 
       {
         title: taskTitle,
-        id: Math.random(10),
+        id: uuidv4(),
         completed: false,
       },
     ];
