@@ -10,10 +10,12 @@ const AddTask = ({handleTaskAddition}) => {
 
     const handleInputChange = (e) => {
         setInputData(e.target.value);
+
     };
 
     const handleInputTaskCLick = () => {
-        handleTaskAddition(inputData)
+        handleTaskAddition(inputData);
+        setInputData('');
     }
 
     return (

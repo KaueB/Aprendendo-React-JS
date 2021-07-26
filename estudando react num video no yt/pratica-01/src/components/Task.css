@@ -8,3 +8,21 @@
     color: #eee;
     align-items: center;
 }
+
+.task-tile {
+    cursor: pointer;
+}
+
+.remove-task-button {
+    background-color: #444;
+    border: none;
+    font-size: 24px;
+    color: #575CDE; 
+}
+
+.see-task-details-button {
+    background-color: #444;
+    border: none;
+    font-size: 24px;
+    color: #575CDE; 
+}

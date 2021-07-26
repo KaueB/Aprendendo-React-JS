@@ -1,0 +1,5 @@
+#6C6D74 cinza
+
+#575CDE azul
+
+#e9e7e7 cinza light
