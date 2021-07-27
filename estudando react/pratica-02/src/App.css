@@ -1,3 +1,26 @@
+:root {
+    --light: #cccccc;
+    --dark: #151515;
+}
+
+
 .App {
-  text-align: center;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.Button-theme-Mode {
+	border-radius: 5px;
+	border: none;
+	background-color: var(--dark);
+	color: var(--light);
+	font-size: 40px;
 }

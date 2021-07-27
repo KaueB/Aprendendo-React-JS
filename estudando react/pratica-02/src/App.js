@@ -1,12 +1,15 @@
-import React from 'react'
-import ThemeProvider from './components/ThemeProvider'
+import React from 'react';
+
+import ThemeMode from './components/buttonTheme'
+
+import './App.css'
 
 const App = () => {
   return (
     <div className="App">
-      <ThemeProvider>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur obcaecati velit aperiam? Similique dignissimos suscipit in velit dolorem debitis dolorum architecto, omnis culpa error libero corrupti eos sit reprehenderit aperiam.</p>
-      </ThemeProvider>
+        <h1>Theme mode</h1>
+        <p>É para mudar o tema!!!</p>
+        <ThemeMode/>
     </div>
   );
 }
