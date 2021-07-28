@@ -69,8 +69,12 @@ const App = () => {
   <Router>
   
     <div className="container">
-      <Header/>
-      <ButtonTheme/> 
+      <div className='container-Header'>
+        <Header/>
+        <div className='container-Button-Theme'>
+          <ButtonTheme/> 
+        </div>
+      </div>
       <Route path="/" exact render={() => (
         <>
           <AddTask handleTaskAddition={handleTaskAddition} />

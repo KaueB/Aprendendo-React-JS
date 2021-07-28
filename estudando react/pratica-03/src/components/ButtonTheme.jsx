@@ -1,8 +1,17 @@
 import React from 'react';
-import './componentsStyle/ButtonTheme.css'
+import './componentsStyle/ButtonTheme.css';
+
+/* 
+import './componentsStyle/AddTask.css';
+import './componentsStyle/Button.css';
+import './componentsStyle/Header.css';
+import './componentsStyle/Task.css';
+import './componentsStyle/TaskDetails.css'; 
+*/
 
 const ButtonTheme = () => {
-    /* 
+    
+    
     const html = document.querySelector("html")
     const checkbox = document.querySelector("input[name=theme]")
 
@@ -15,6 +24,7 @@ const ButtonTheme = () => {
     const initialColors = {
         bg: getStyle(html, "--bg"),
         bgPanel: getStyle(html, "--bg-panel"),
+        bgTasks: getStyle(html, "--bg-tasks"),
         colorHeadings: getStyle(html, "--color-headings"),
         colorText: getStyle(html, "--color-text"),
     }
@@ -22,6 +32,7 @@ const ButtonTheme = () => {
     const darkMode = {
         bg: "#333333",
         bgPanel: "#434343",
+        bgTasks: "#585858",
         colorHeadings: "#3664FF",
         colorText: "#B5B5B5"
     }
@@ -36,12 +47,10 @@ const ButtonTheme = () => {
         )
     }
 
-
     checkbox.addEventListener("change", ({target}) => {
         target.checked ? changeColors(darkMode) : changeColors(initialColors)
     })
-    */
-   
+
     return (
         <div className="toggle">
           <input id="switch" type="checkbox" name="theme"></input>

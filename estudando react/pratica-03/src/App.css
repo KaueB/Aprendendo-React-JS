@@ -3,8 +3,16 @@
     margin: 30px auto;
     overflow: auto;
     min-height: 300px;
-    border: 2px solid #575CDE;
+    border: 2px solid var(--color-headings);
     border-radius: 10px;
     padding: 30px;
-    background-color: #e9e7e7;
+    background-color: var(--bg-panel);
+}
+
+.container-Header {
+    display: flex;
+}
+
+.container-Button-Theme {
+    margin-left: 140px;
 }
