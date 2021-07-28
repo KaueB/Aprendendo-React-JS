@@ -3,3 +3,8 @@
 #575CDE azul
 
 #e9e7e7 cinza light
+
+	--bg: #FCFCFC;
+    --bg-panel: #EBEBEB;
+    --color-headings: #0077FF;
+    --color-text: #333333;

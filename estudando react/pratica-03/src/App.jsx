@@ -7,6 +7,7 @@ import Header from "./components/Header"
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask"
 import TaskDetails from "./components/TaskDetails"
+import ButtonTheme from './components/ButtonTheme';
 
 import './App.css';
 
@@ -68,7 +69,8 @@ const App = () => {
   <Router>
   
     <div className="container">
-      <Header/> 
+      <Header/>
+      <ButtonTheme/> 
       <Route path="/" exact render={() => (
         <>
           <AddTask handleTaskAddition={handleTaskAddition} />
