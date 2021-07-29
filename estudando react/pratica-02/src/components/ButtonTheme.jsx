@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './componentsStyle/ButtonTheme.css';
+import './componentsStyle/ButtonTheme.css'
 
 const ButtonTheme = () => {
-    
+
     var checkbox = document.querySelector('input[name=theme]');
 
     checkbox.addEventListener('change', function() {
@@ -22,13 +22,13 @@ const ButtonTheme = () => {
             document.documentElement.classList.remove('transition')
         }, 1000)
     }
-    
+
     return (
-            <div className="toggle">
-                <input id="switch" type="checkbox" name="theme"></input>
-                <label for="switch">Toggle</label>
-            </div>
-    );
+        <>
+            <input type="checkbox" id="switch" name="theme" />
+            <label for="switch">Toggle</label>
+        </>
+    )
 }
- 
+
 export default ButtonTheme;

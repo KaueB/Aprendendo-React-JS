@@ -1,22 +1,21 @@
 import React from 'react';
 
-import './App.css'
-import './buttonTheme.css'
+import ButtonTheme from './components/ButtonTheme';
+
+import './App.css';
 
 const App = () => {
 
   return (
     <>
     
-    <input type="checkbox" id="theme-switcher"/>
-    <div id="app-container">
-        <div class="theme-switcher-area">
-            <label for="theme-switcher" class="theme-switcher-button"></label>
+    <div class="container">
+        <h1>Light / Dark Mode</h1>
+        <div class="toggle-container">
+          <ButtonTheme/>
         </div>
 
-        <h1>Mudando tema com CSS Puro</h1>
-        <p>O texto fica em contraste com o fundo</p>
-        <input type='switch'/>  
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus repellendus dolorem eum consequatur id exercitationem nesciunt, inventore modi perferendis impedit esse, tempora officia, ipsam quae libero. Nostrum, alias dignissimos.</p>
     </div>
 
     </>

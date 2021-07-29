@@ -2,12 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
 
+html {
   --bg: #FCFCFC;
   --bg-panel: #EBEBEB;
   --bg-tasks: #c0c0c0;
   --color-headings: #0077FF;
   --color-text: #333333;
+}
+
+html[data-theme='dark'] {
+  --bg: #2c2c2c;
+  --bg-panel: #434343;
+  --bg-tasks: #585858;
+  --color-headings: #3694FF;
+  --color-text: #B5B5B5;
 }
 
 body {
