@@ -4,9 +4,9 @@ import './componentsStyle/ButtonTheme.css';
 
 const ButtonTheme = () => {
     
-    var checkbox = document.querySelector('input[name=theme]');
+    var checkboxF = document.querySelector('input[name=theme]');
 
-    checkbox.addEventListener('change', function() {
+    checkboxF.addEventListener('change', function() {
         if(this.checked) {
             trans()
             document.documentElement.setAttribute('data-theme', 'dark')
