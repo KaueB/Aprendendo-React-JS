@@ -59,31 +59,6 @@ const App = () => {
     setTasks(newTasks);
   };
 
-  const handleTaskDeletion = (taskId) => {
-    const newTasks = tasks.filter(task => task.id !== taskId)
-
-    setTasks(newTasks)
-  }
-
-  var checkboxF = document.querySelector('input[name=theme]');
-
-    checkboxF.addEventListener('change', function() {
-        if(this.checked) {
-            trans()
-            document.documentElement.setAttribute('data-theme', 'dark')
-        } else {
-            trans()
-            document.documentElement.setAttribute('data-theme', 'light')
-        }
-    })
-
-    let trans = () => {
-        document.documentElement.classList.add('transition');
-        window.setTimeout(() => {
-            document.documentElement.classList.remove('transition')
-        }, 1000)
-    }
-
   return (
   <Router>
   

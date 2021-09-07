@@ -3,7 +3,8 @@ import React from 'react';
 import './componentsStyle/ButtonTheme.css';
 
 const ButtonTheme = () => {
-    
+
+    /* 
     var checkboxF = document.querySelector('input[name=theme]');
 
     checkboxF.addEventListener('change', function() {
@@ -22,7 +23,8 @@ const ButtonTheme = () => {
             document.documentElement.classList.remove('transition')
         }, 1000)
     }
-    
+    */
+
     return (
             <div className="toggle">
                 <input id="switch" type="checkbox" name="theme"></input>
