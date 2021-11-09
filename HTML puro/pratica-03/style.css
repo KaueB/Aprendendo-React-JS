@@ -99,3 +99,11 @@ html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
+
+#sanepar {
+    font-size: 84%;
+}
+
+#quadrado {
+    font-size: 1.9rem;
+}
