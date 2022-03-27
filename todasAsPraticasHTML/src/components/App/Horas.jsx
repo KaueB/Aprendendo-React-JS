@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 
 import '../../App.css';
 import madrugada from "../img/manha.png";
@@ -48,7 +48,9 @@ function Horas() {
         }, 1000);
       }, []);
 
-    /* function data() { // Data de hoje
+    /* Teste
+    
+    function data() { // Data de hoje
         let hoje = window.document.getElementById('hoje')
         
         const now = new Date();
@@ -142,7 +144,7 @@ function Horas() {
     } window.setInterval("Horario()",1000)  */
 
     return (
-        <div>
+        <div onload={carregar()}>
             <header>
                 <h1 className='hoje'>Dia da Semana Dia/Mês/Ano</h1>
                 <h1 id='bom dia'>Hora do dia</h1>
@@ -155,7 +157,7 @@ function Horas() {
                     <img id = 'imagem' src={manha} alt="Foto do dia"/>
                 </div>
                 {/* <input type="button" value="botao" onClick={data()} /> */}
-                <input type="button" value="botao" onClick={carregar()} /> 
+                {/* <input type="button" value="botao" onClick={carregar()} />  */}
                 {/* <input type="button" value="botao" onClick={Horario()} /> */}
             </section>
         </div>
