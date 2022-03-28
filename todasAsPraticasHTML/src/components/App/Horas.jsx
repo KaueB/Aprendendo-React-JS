@@ -3,8 +3,8 @@ import React, { useState, useEffect} from 'react'
 import '../../App.css';
 import madrugada from "../img/manha.png";
 import manha from "../img/manha.png";
-import tarde from "../img/manha.png";   
-import noite from "../img/manha.png";
+import tarde from "../img/tarde.png";   
+import noite from "../img/noite.png";
 
 function Horas() {
     
@@ -41,12 +41,34 @@ function Horas() {
     
             else {Year = yearNr;}
     
-            var todaysDate = (" " + Day + ", " + dayNr + "/" + Month + "/" + Year);
+            /* var todaysDate = (" " + Day + ", " + dayNr + "/" + Month + "/" + Year); */
           
-            hoje.innerHTML = todaysDate 
+            hoje.innerHTML = (" " + Day + ", " + dayNr + "/" + Month + "/" + Year)
     
+
+            var agora = document.getElementById("agora")
+            // var hoje = new Date()
+            var horas = hoje.getHours()
+      
+            if ( horas < 10){
+                horas = "0"+horas
+            }
+
+            var minutos = hoje.getMinutes()
+
+            if (minutos < 10) {
+                minutos = "0"+minutos 
+            }
+
+            var segundos = hoje.getSeconds()
+
+            if (segundos < 10) {
+                segundos = '0'+segundos
+            }
+
+            agora.innerHTML = `<div> horas + ":" + minutos + ":" + segundos </div>` // horas + ":" + minutos + ":" + segundos
         }, 1000);
-      }, []);
+    }, []);
 
     /* Teste
     
@@ -95,7 +117,6 @@ function Horas() {
         var agora = new Date()
         var HorasC = agora.getHours()
       
-
         if (HorasC >= 0 && HorasC < 6 ) {
             // Madrugada
             img.src = {madrugada}
@@ -119,7 +140,7 @@ function Horas() {
         }
     }
       
-    /* function Horario(){  // Horário
+    /* function Horario(){  // Horário, depois eu ativo
         var agora = document.getElementById("agora")
         var hoje = new Date()
         var horas = hoje.getHours()
@@ -144,7 +165,7 @@ function Horas() {
     } window.setInterval("Horario()",1000)  */
 
     return (
-        <div onload={carregar()}>
+        <div onload={() => this.carregar()}>
             <header>
                 <h1 className='hoje'>Dia da Semana Dia/Mês/Ano</h1>
                 <h1 id='bom dia'>Hora do dia</h1>
