@@ -1,11 +1,11 @@
 import './App.css';
 
-import Horas from './components/App/Horas';
- 
+import Clock from './components/Clock';
+
 function App() {
   return (
-    <div className="App"> {/* onload={carregar()} */} 
-      <Horas />
+    <div className="App">
+      <Clock />
     </div>
   );
 }
