@@ -1,0 +1,9 @@
+div#clockDisplay{
+    text-align: center;
+    padding: 5px;
+    font: normal 50px italic;
+}
+
+div#displayImage{
+    text-align: center;
+}

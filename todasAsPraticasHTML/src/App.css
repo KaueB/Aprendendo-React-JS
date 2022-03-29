@@ -11,24 +11,8 @@ header {
     /* -webkit-text-stroke:1px black -- isto não fico bom */
 }
 
-/* Div da data */
-h1#hoje {
-    padding-top: 30px;
-}
-
 h1 {
     font: normal 50px italic;
-}
-
-/* DIV da caixa1 */
-div#agora{
-    text-align: center;
-    padding: 5px;
-    font: normal 50px italic;
-}
-
-div#foto{
-    text-align: center;
 }
 
 /*  Conteúdo */

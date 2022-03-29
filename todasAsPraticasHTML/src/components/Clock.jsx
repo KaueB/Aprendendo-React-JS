@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
-import dawnImg from "../images/madrugada.png";
-import morningImg from "../images/manha.png";
-import noonImg from "../images/tarde.png";
-import nightImg from "../images/noite.png";
+import './style/Clock.css'
+
+import dawnImg from "../images/date/madrugada.png";
+import morningImg from "../images/date/manha.png";
+import noonImg from "../images/date/tarde.png";
+import nightImg from "../images/date/noite.png";
 
 function Clock() {
     const [date, setDate] = useState("Dia da Semana Dia/Mês/Ano");
@@ -11,6 +13,7 @@ function Clock() {
     const [time, setTime] = useState("00:00:00");
     const [displayImg, setDisplayImg] = useState(null);
 
+    // Intervalo de 1seg, para ficar atualizando
     useEffect(() => {
         setInterval(() => {
             const now = new Date();
@@ -30,6 +33,7 @@ function Clock() {
 
         setDate(` ${weekday}, ${dayOfMonth}/ ${month} /${year}`);
     }
+    
     function handleGreeting(hour) {
         const timeOfDay = getTimeOfDay(hour);
         if (timeOfDay === 'Madrugada')
@@ -51,6 +55,8 @@ function Clock() {
 
         setTime(`${formattedTime.hours}:${formattedTime.minutes}:${formattedTime.seconds}`);
     }
+
+
     function handleDisplayImage(hour) {
         const timeOfDay = getTimeOfDay(hour);
 
@@ -91,6 +97,7 @@ function Clock() {
 
         return "";
     }
+    
     function monthToString(month) {
         if (month === 1) return "Janeiro";
         if (month === 2) return "Fevereiro";
@@ -110,7 +117,7 @@ function Clock() {
 
     return (
         <div>
-            <header>
+            <header> 
                 <h1 id="weekDayTitle">{date}</h1>
                 <h1 id="timeTitle">{greeting}</h1>
             </header>
