@@ -45,6 +45,7 @@ function Clock() {
         else if (timeOfDay === 'Noite')
             setGreeting("Boa Noite");
     }
+
     function handleTime(date) {
         const options = { minimumIntegerDigits: 2 };
         const formattedTime = {
@@ -55,7 +56,6 @@ function Clock() {
 
         setTime(`${formattedTime.hours}:${formattedTime.minutes}:${formattedTime.seconds}`);
     }
-
 
     function handleDisplayImage(hour) {
         const timeOfDay = getTimeOfDay(hour);
@@ -86,6 +86,7 @@ function Clock() {
 
         return "";
     }
+    
     function weekdayToString(weekday) {
         if (weekday === 1) return "Domingo";
         if (weekday === 2) return "Segunda-feira";
