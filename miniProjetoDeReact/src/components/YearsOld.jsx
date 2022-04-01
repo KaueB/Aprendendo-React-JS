@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import RadioButton from './function/RadioButton';
-
 import maleBabyPhoto from '../images/age/foto-bebe-m.png';
 import femaleBabyPhoto from '../images/age/foto-bebe-f.png';
 import photoOfYoungMale from '../images/age/foto-jovem-m.png';
@@ -16,19 +14,11 @@ function YearsOld() {
     const [formatResult, setResult] = useState("Preencha os dados acima para ver o resultado!");
     const [photo, setPhoto] = useState(null);
 
-    let [maleValue, setMaleValue] = React.useState(false)
-    let [femaleValue, setFemaleValue] = React.useState(false)
-
-    let handleMale = () => {
-        setMaleValue(true)
-        setFemaleValue(false)
-    };
-        
-    let handleFemale = () => {
-        setFemaleValue(true)
-        setMaleValue(false)
-    };
-          
+    const [currentRadioValue, setCurrentRadioValue] = useState(null)
+    const e = ''
+    const handleRadioChange = (e) => {
+        setCurrentRadioValue(e.target.value);
+    };    
 
     let date = new Date()
     let year = date.getFullYear()
@@ -37,9 +27,9 @@ function YearsOld() {
     let ages = year - getYear
 
     function check() {  
-        if ( setMaleValue === true ) {
+        if ( e.target.value === 'radioMale' ) {
             setResult('teste')
-            if(ages >=0 && ages < 10) {
+            if(ages < 10) {
                 //criança
                 setPhoto(maleBabyPhoto)
             } else if (ages <21) {
@@ -52,7 +42,7 @@ function YearsOld() {
                 // idoso
                 setPhoto(photoOfElderlyMale)
             }
-        } else if ( setFemaleValue === true){
+        } else if ( e.target.value === 'radioFemale' ){
             setResult('teste')
             if(ages >=0 && ages < 10) {
                 //criança
@@ -81,9 +71,23 @@ function YearsOld() {
                         <input type="number" name="textOfTheYear" id="textOfTheYear" min="0"/>
                     </p>
                     <p>Sexo: 
-                        <RadioButton label="" value={maleValue} onChange={handleMale}/>
+                        <input
+                            id="radioMale"
+                            name="radioMale"
+                            type="radio"
+                            value="radioMale"
+                            onChange={handleRadioChange}
+                            checked={currentRadioValue === 'radioMale'}
+                        />
                         <label for="mas">Masculino</label>
-                        <RadioButton label="" value={femaleValue} onChange={handleFemale}/>
+                        <input
+                            id="radioFemale"
+                            name="radioFemale"
+                            type="radio"
+                            value="radioFemale"
+                            onChange={handleRadioChange}
+                            checked={currentRadioValue === 'radioFemale'}
+                        />
                         <label for="fem">Feminino</label>   
                     </p>
                     <p>
