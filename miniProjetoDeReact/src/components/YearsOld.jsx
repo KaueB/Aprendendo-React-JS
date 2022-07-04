@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style/YearsOld.css'
 
 import RadioButton from './function/RadioButton';
 
@@ -14,21 +15,24 @@ import photoOfElderlyFemale from '../images/age/foto-idoso-f.png';
 function YearsOld() {
     
     const [formatResult, setResult] = useState("Preencha os dados acima para ver o resultado!");
-    const [photo, setPhoto] = useState(null);
-
-    let [maleValue, setMaleValue] = React.useState(false)
+    const [photo, setPhoto] = useState();
+    
+    let male, female 
+    let [maleValue, setMaleValue] = React.useState(true)
     let [femaleValue, setFemaleValue] = React.useState(false)
+    let [setGenre] = React.useState(male)
 
     let handleMale = () => {
         setMaleValue(true)
         setFemaleValue(false)
+        setGenre(male)
     };
         
     let handleFemale = () => {
-        setFemaleValue(true)
         setMaleValue(false)
+        setFemaleValue(true)
+        setGenre(female)
     };
-          
 
     let date = new Date()
     let year = date.getFullYear()
@@ -37,7 +41,7 @@ function YearsOld() {
     let ages = year - getYear
 
     function check() {  
-        if ( setMaleValue === true ) {
+        if ( setGenre === male ) {
             setResult('teste')
             if(ages >=0 && ages < 10) {
                 //criança
@@ -52,7 +56,7 @@ function YearsOld() {
                 // idoso
                 setPhoto(photoOfElderlyMale)
             }
-        } else if ( setFemaleValue === true){
+        } else if ( setGenre === female){
             setResult('teste')
             if(ages >=0 && ages < 10) {
                 //criança
@@ -71,7 +75,7 @@ function YearsOld() {
     }
 
     return (
-        <div>
+        <div id='YearsOld'>
             <header>
                 <h1>Vamos descubrir quantos anos você tem.</h1>
             </header>
