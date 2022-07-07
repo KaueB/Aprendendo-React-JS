@@ -1,13 +1,13 @@
 header {
   overflow: hidden;
-  background-color: #000000;
+  background-color: #777777;
   padding: 20px 10px;
   margin: 15px;
 }
 
-header > h1{
-  float: left;
-  color: rgb(255, 255, 255);
+#headerH1{
+  float: center;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 12px;
   text-decoration: none;
