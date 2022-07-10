@@ -14,75 +14,77 @@ import photoOfElderlyFemale from '../images/age/foto-idoso-f.png';
 
 function YearsOld() {
     
-    const [formatResult, setResult] = useState("Preencha os dados acima para ver o resultado!");
+    const [formatResult, setFormatResult] = useState("Preencha os dados acima para ver o resultado!");
     const [photo, setPhoto] = useState();
     
-    let male, female 
-    let [maleValue, setMaleValue] = React.useState(true)
-    let [femaleValue, setFemaleValue] = React.useState(false)
-    let [setGenre] = React.useState(male)
+    const [maleValue, setMaleValue] = useState(true)
+    const [femaleValue, setFemaleValue] = useState(false)
+    const [genre, setGenre] = useState('homem')
 
-    let handleMale = () => {
+    let [getYear, setGetYear] = useState(null)
+
+    function handleMale() {
         setMaleValue(true)
         setFemaleValue(false)
-        setGenre(male)
+        setGenre('homem')
     };
         
-    let handleFemale = () => {
+    function handleFemale() {
         setMaleValue(false)
         setFemaleValue(true)
-        setGenre(female)
+        setGenre('mulher')
     };
 
     let date = new Date()
     let year = date.getFullYear()
-
-    let getYear = 2004 // testando, irei mudar depois
     let ages = year - getYear
 
     function check() {  
-        if ( setGenre === male ) {
-            setResult('teste')
-            if(ages >=0 && ages < 10) {
-                //criança
-                setPhoto(maleBabyPhoto)
-            } else if (ages <21) {
-                //jovem
-                setPhoto(photoOfYoungMale)
-            } else if (ages < 50) {
-                // adulto
-                setPhoto(maleAdultPhoto)
-            } else {
-                // idoso
-                setPhoto(photoOfElderlyMale)
+        if (getYear <= 0 || getYear > year) {
+            window.alert('Verifique os dados e tente novamente')
+        } else {
+            if ( maleValue === true ) {
+                if(ages >=0 && ages < 10) {
+                    //criança
+                    setPhoto(maleBabyPhoto)
+                } else if (ages <21) {
+                    //jovem
+                    setPhoto(photoOfYoungMale)
+                } else if (ages < 50) {
+                    // adulto
+                    setPhoto(maleAdultPhoto)
+                } else {
+                    // idoso
+                    setPhoto(photoOfElderlyMale)
+                }
+            } else if ( femaleValue === true) {
+                if(ages >=0 && ages < 10) {
+                    //criança
+                    setPhoto(femaleBabyPhoto)
+                } else if (ages <21) {
+                    //jovem
+                    setPhoto(photoOfYoungFemale)
+                } else if (ages < 50) {
+                    // adulto
+                    setPhoto(femaleAdultPhoto)
+                } else {
+                    // idoso
+                    setPhoto(photoOfElderlyFemale)
+                }
             }
-        } else if ( setGenre === female){
-            setResult('teste')
-            if(ages >=0 && ages < 10) {
-                //criança
-                setPhoto(femaleBabyPhoto)
-            } else if (ages <21) {
-                //jovem
-                setPhoto(photoOfYoungFemale)
-            } else if (ages < 50) {
-                // adulto
-                setPhoto(femaleAdultPhoto)
-            } else {
-                // idoso
-                setPhoto(photoOfElderlyFemale)
-            }
+            setFormatResult(`Detectamos ${genre} ${ages} com anos`)
         }
     }
 
     return (
-        <div id='YearsOld'>
+        <div id={'YearsOld'}>
             <header>
                 <h1>Vamos descubrir quantos anos você tem.</h1>
             </header>
             <section>
                 <div>
                     <p>Ano de Nascimento: 
-                        <input type="number" name="textOfTheYear" id="textOfTheYear" min="0"/>
+                        <input type="number" min={0} defaultValue={0} onChange={e => setGetYear(e.target.value)}/>
                     </p>
                     <p>Sexo: 
                         <RadioButton label="" value={maleValue} onChange={handleMale}/>
@@ -94,9 +96,9 @@ function YearsOld() {
                         <input type="button" value="Verificar" onClick={check}/>
                     </p>
                 </div>
-                <div id = "result">
-                    {formatResult}
-                    <img src={photo} alt="" />
+                <div id={'result'}>
+                    <p>{formatResult}</p>
+                    <img src={photo} alt=""/>
                 </div>
             </section>
         </div>
