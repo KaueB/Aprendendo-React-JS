@@ -1,0 +1,18 @@
+footer > div > svg {
+    width: 35px;
+    height: 35px;
+}
+
+header > div > svg {
+    width: 60px;
+    height: 60px;
+}
+
+header {
+    display : flex;
+    flex-direction : row;
+}
+
+header > h1 {
+    
+}
