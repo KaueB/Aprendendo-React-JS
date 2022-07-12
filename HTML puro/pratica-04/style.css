@@ -1,6 +1,6 @@
-footer > div > svg {
-    width: 35px;
-    height: 35px;
+body{
+    margin: 0px;
+    font: normal 20px arial;
 }
 
 header > div > svg {
@@ -10,9 +10,21 @@ header > div > svg {
 
 header {
     display : flex;
-    flex-direction : row;
+    background-color: #023535;
+    justify-content: center;
+    align-items: center;
 }
 
-header > h1 {
-    
+main {
+    background-image: ;
+    text-align: right;
+}
+
+main > span{
+    margin-inline-end: 20%;
+}
+
+footer > div > svg {
+    width: 35px;
+    height: 35px;
 }

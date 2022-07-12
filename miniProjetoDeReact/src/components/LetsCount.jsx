@@ -5,11 +5,18 @@ function LetsCount() {
 
     const [resultCount, setResultCount] =useState('Preparando a conta...')
 
+    /* const [count, setAcount] = useState({
+        accountStart: 0
+        accountSteps: 0 
+        endOfAccount: 0
+
+    }) */
+
     const [accountStart, setAccountStart] = useState(0)
     const [accountSteps, setAccountSteps] = useState(0)
     const [endOfAccount, setEndOfAccount] = useState(0)
 
-    const [sumOfResults, setSumOfResults] = useState('Contando...')
+    const [sumOfResults, setSumOfResults] = useState('Contando...') 
     
     function Count() {
         if (accountStart===0 || endOfAccount===0 || accountSteps===0) {
@@ -19,29 +26,43 @@ function LetsCount() {
                 alert('Passo invalido! Considerando PASSO 1')
                 setAccountSteps(1)
             }
-            
-            if (accountStart < endOfAccount) {
+
+            let i = Number(accountStart.value)
+            let f = Number(endOfAccount.value)
+            let p = Number(accountSteps.value)
+            let c = i
+
+            if (i < f) {
                 // Contagem crescente
-                for ( let c = accountStart ; c <= endOfAccount ; c + accountSteps) {
-                    setSumOfResult(sumOfResults += 'c') 
-                }
-                sumOfResults += (` \u{1f3C1}` )
+                while ( i <= f) {
+                    c = i
+                    i = i + p 
+                    setSumOfResults(e => {
+                        return {
+                            sumOfResults: sumOfResults + `${c} \u{1f449}`
+                        }
+                    })
+                } 
             } else {
                 // Contagem regressiva
-                for ( let c = accountStart ; c >= endOfAccount ; c - accountSteps) {
-                    sumOfResults +=( `${c} \u{1f449}` )
-                }
-                sumOfResults +=( ` \u{1f3C1}` )
-            } 
-        setResultCount(sumOfResults)
+                while ( i >= f) {
+                    c = i
+                    i = i + p 
+                    setSumOfResults(e => {
+                        return {
+                            sumOfResults: sumOfResults + `${c} \u{1f449}`
+                        }
+                    })
+                } 
+            } setResultCount(sumOfResults)
         }
     }
 
     return (
         <div id='LetsCount'>
             <header>
-            <h1>Vamos Contar</h1>
-        </header>
+                <h1>Vamos Contar</h1>
+            </header>
         <section>
             <div>
                 <p>Início:
