@@ -36,23 +36,15 @@ function LetsCount() {
                 // Contagem crescente
                 while ( i <= f) {
                     c = i
-                    i = i + p 
-                    setSumOfResults(e => {
-                        return {
-                            sumOfResults: sumOfResults + `${c} \u{1f449}`
-                        }
-                    })
+                    i += p 
+                    setSumOfResults(c)
                 } 
             } else {
                 // Contagem regressiva
                 while ( i >= f) {
                     c = i
-                    i = i + p 
-                    setSumOfResults(e => {
-                        return {
-                            sumOfResults: sumOfResults + `${c} \u{1f449}`
-                        }
-                    })
+                    i -= p 
+                    setSumOfResults(c)
                 } 
             } setResultCount(sumOfResults)
         }

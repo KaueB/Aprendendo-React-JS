@@ -15,7 +15,7 @@ import './App.css'
 function App() {
     return (
         <>
-            <ComponenteSete titulo='Componente sete' />
+            <ComponenteSete titulo='Componente sete'/>
             <ComponenteSeis titulo='Componente seis' />
             <ComponenteQuatro titulo='Componente Quatro'>
                 <ComponenteCinco />

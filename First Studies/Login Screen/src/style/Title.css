@@ -1,0 +1,16 @@
+.logo {
+    padding: 2rem;
+}
+
+.logo .title {
+    color: #063838;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.logo p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+}

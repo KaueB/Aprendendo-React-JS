@@ -1,0 +1,68 @@
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1.3rem;
+    width: 530px;
+    height: 380px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.603), 0 8px 16px rgba(0, 0, 0, 0.466);
+}
+
+form input {
+    outline: none;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 0.2rem;
+    border-color: #3a3a3a;
+}
+
+form input:focus {
+    border: 1.8px solid #1877f2;
+}
+
+form .login {
+    text-decoration: none;
+    border: 1px solid#015958;
+    color: #fff;
+    background-color: #015958;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+}
+
+form .login:hover {
+    color: #fff;
+    background-color: #043d3b;
+    transition: 0.4s;
+}
+
+form hr {
+    background: #f7f7f7;
+    margin: 1rem;
+}
+
+form .registration {
+    text-decoration: none;
+    border: 1px solid#066837;
+    color: #fff;
+    background-color: #066837;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+}
+
+form .registration:hover {
+    color: #fff;
+    background-color: #06502b;
+    transition: 0.4s;
+}
+
+form a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 0.8rem;
+    color: #1877f2;
+}
