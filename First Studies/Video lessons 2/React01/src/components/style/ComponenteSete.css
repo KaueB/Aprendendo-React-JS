@@ -1,6 +1,6 @@
 .trueOrFalse {
     padding: 1rem;
-    background-color: #2b2b2b;
+    background-color: #313131;
     width: fit-content;
 }
 
@@ -12,4 +12,8 @@
 .buttonToChangeTheValue {
     padding: 0.2rem 0.4rem;
     margin-right: 0.4rem;
+}
+
+.textTrueOrFalse {
+    margin-left: 10px;
 }

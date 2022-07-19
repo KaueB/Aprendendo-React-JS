@@ -24,7 +24,16 @@ const ComponenteSete = (props) => {
             <div className="trueOrFalse">
                 <p className="changeTheValue">
                     <button className="buttonToChangeTheValue" onClick={handleValue}> Trocar </button>
-                    {valor === true ? <p style={{ color: "green" }}>Verdadeiro</p> : <p style={{ color: "red" }}>Falso</p>}
+                    {
+                        valor === true ?
+                            <p className="textTrueOrFalse" style={{ color: "green" }}>
+                                Verdadeiro
+                            </p>
+                            :
+                            <p className="textTrueOrFalse" style={{ color: "red" }}>
+                                Falso
+                            </p>
+                    }
                 </p>
             </div>
         </div>
