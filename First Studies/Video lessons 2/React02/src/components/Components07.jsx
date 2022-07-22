@@ -14,9 +14,9 @@ const Components07 = () => {
             <hr />
             <input type="text" value={textResult} onChange={event => { setTextResult(event.target.value) }}/>
             <hr />
-            <p style={{fontSize: '20px'}}> O texto é : {textResult} </p>
+            <p style={{fontSize: '20px'}}> O texto é : <strong> {textResult} </strong></p>
             <hr />
-            <p>Total renders: {totalChange.current}</p>
+            <p>Total renders: <strong>{totalChange.current}</strong></p>
         </div>
     )
 }

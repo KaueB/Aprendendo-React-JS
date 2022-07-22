@@ -15,3 +15,9 @@ hr {
 input {
     margin: 5px 0px;
 }
+
+button {
+    padding: 5px;
+    margin: 10px 2px 0px 2px;
+    flex-direction: row;
+}
